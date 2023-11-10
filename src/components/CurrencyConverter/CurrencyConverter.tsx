@@ -7,8 +7,8 @@ import moment from "moment";
 import "./index.css";
 
 const CurrencyConverter: React.FC = () => {
-  const [from, setFrom] = useState<string>("EUR - Euro (€)");
-  const [into, setInto] = useState<string>("INR - Indian Rupee (₹)");
+  const [from, setFrom] = useState<string>("usd");
+  const [into, setInto] = useState<string>("uzs");
   const [loading, setLoading] = useState<boolean>(false);
   const [amount, setAmount] = useState<number>(1);
   const [currencyResult, setCurrencyResult] = useState<string>("");
@@ -89,6 +89,7 @@ const CurrencyConverter: React.FC = () => {
             className="form-control-lg currency-amount"
             placeholder="Enter Amount"
             value={amount}
+            min={0}
             type="number"
             onChange={handleInput}
           />

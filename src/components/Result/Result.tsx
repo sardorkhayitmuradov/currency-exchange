@@ -1,5 +1,6 @@
 import React from "react";
 import Loading from "../Loading/Loading";
+import { formatValue } from "react-currency-input-field";
 import "./index.css";
 
 interface ResultProps {
@@ -33,21 +34,21 @@ function Result({
         !isNaN(rate) && (
           <>
             <p className="currency-value">
-              {amount} {fromField}{" "}
+              {formatValue({
+                value: `${amount}`,
+              })}{" "}
+              {fromField}{" "}
               <span
                 className={`currency-flag currency-flag-sm currency-flag-${from.toLowerCase()}`}
               />
             </p>
             <p className="currency-result">
-              {result} ({intoField.toUpperCase()}){" "}
+              {formatValue({
+                value: `${result}`,
+              })}{" "}
+              ({intoField.toUpperCase()}){" "}
               <span
                 className={`currency-flag currency-flag-lg currency-flag-${intoField.toLowerCase()}`}
-              />
-            </p>
-            <p className="currency-rate">
-              Rate={rate}{" "}
-              <span
-                className={`currency-flag currency-flag-sm currency-flag-${intoField.toLowerCase()}`}
               />
             </p>
             <p className="currency-update">Last updated on: {update}</p>
