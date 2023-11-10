@@ -1,12 +1,8 @@
-import Header from "./components/Header/Header";
-import CurrencyConverter from "./components/CurrencyConverter/CurrencyConverter";
+import Home from "./pages/home/home";
 
 function App() {
   return (
-    <>
-      <Header />
-      <CurrencyConverter />
-    </>
+    <Home />
   );
 }
 

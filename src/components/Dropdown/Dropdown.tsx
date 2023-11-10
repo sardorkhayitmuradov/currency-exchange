@@ -1,14 +1,9 @@
 import React from "react";
 import Select, { components } from "react-select";
 import { currency } from "../../config/currency";
-import { customStyles } from "./index";
+import { customStyles } from ".";
+import { DropdownsProps } from "./interface";
 const { Option } = components;
-
-interface DropdownsProps {
-  placeholder: string;
-  handleChange: (selectedOption: any) => void;
-  value: any;
-}
 
 const OptionComponent: React.FC<any> = (props) => {
   return (
@@ -22,7 +17,9 @@ const OptionComponent: React.FC<any> = (props) => {
 const Dropdowns: React.FC<DropdownsProps> = (props) => {
   const { handleChange, placeholder, value } = props;
 
-  const selectValue = currency.find((option) => option.value === value || option.label === value);
+  const selectValue = currency.find(
+    (option) => option.value === value || option.label === value
+  );
 
   return (
     <Select

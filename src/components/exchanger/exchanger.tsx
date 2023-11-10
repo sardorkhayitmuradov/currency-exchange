@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { endpointPath } from "../../config/api";
-import Dropdowns from "../Dropdown/Dropdown";
-import Result from "../Result/Result";
+import Dropdowns from "../dropdown/dropdown";
+import Result from "../summary/summary";
 import moment from "moment";
 import "./index.css";
 
-const CurrencyConverter: React.FC = () => {
+const Exchanger: React.FC = () => {
   const [from, setFrom] = useState<string>("usd");
   const [into, setInto] = useState<string>("uzs");
   const [loading, setLoading] = useState<boolean>(false);
@@ -130,4 +130,4 @@ const CurrencyConverter: React.FC = () => {
   );
 };
 
-export default CurrencyConverter;
+export default Exchanger;

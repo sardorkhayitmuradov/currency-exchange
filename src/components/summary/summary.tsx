@@ -1,17 +1,7 @@
-import React from "react";
-import Loading from "../Loading/Loading";
+import Loading from "../loading/loading";
 import { formatValue } from "react-currency-input-field";
 import "./index.css";
-
-interface ResultProps {
-  loading: boolean;
-  result: number;
-  rate: number;
-  into: string;
-  from: string;
-  amount: number;
-  update: string;
-}
+import { SummaryProps } from "./interface";
 
 function Result({
   loading,
@@ -21,7 +11,7 @@ function Result({
   from,
   amount,
   update,
-}: ResultProps) {
+}: SummaryProps) {
   const fromField = from.split(" ")[0].trim().toUpperCase();
   const intoField = into.split(" ")[0].trim().toUpperCase();
 
@@ -42,7 +32,7 @@ function Result({
                 className={`currency-flag currency-flag-sm currency-flag-${from.toLowerCase()}`}
               />
             </p>
-            <p className="currency-result">
+            <p className="currency-summary">
               {formatValue({
                 value: `${result}`,
               })}{" "}

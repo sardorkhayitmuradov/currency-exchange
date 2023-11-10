@@ -1,4 +1,3 @@
-import React from "react";
 import { heading } from "../../config/api";
 import "./index.css"
 
